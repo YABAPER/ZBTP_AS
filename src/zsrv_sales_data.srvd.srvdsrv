@@ -1,0 +1,4 @@
+@EndUserText.label: 'Service Definition for Sales Order'
+define service ZSRV_SALES_DATA {
+  expose ZC_SH_SALES as SalesData;
+}
