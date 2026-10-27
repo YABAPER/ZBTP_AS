@@ -1,4 +1,4 @@
 @EndUserText.label: 'Service Definition for Sales Order'
 define service ZSRV_SALES_DATA {
-  expose ZC_SH_SALES as SalesData;
+  expose ZC_AS_SALES as SalesData;
 }
