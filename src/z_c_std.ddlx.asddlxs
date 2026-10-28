@@ -1,0 +1,46 @@
+@Metadata.layer: #CORE
+annotate entity Z_C_STD with
+{
+  @UI.facet: [{
+      type: #IDENTIFICATION_REFERENCE,
+      position: 1,
+      label: 'STUDENT DETAIL'
+    }]
+
+  //  @UI.lineItem: [{ position: 1, label: 'Student ID' }]
+  //  @UI.identification: [{ position: 1, label: 'Student ID' }]
+  //  Rollno;
+
+  @UI.lineItem: [{ position: 1, label: 'Student ID' },
+                 { type: #FOR_ACTION, dataAction: 'ApproveStudent', label: 'Approve Student', position: 70 }
+                ]                  
+  @UI.identification: [{ position: 1, label: 'Student ID' },
+                       { position: 70, type: #FOR_ACTION, dataAction: 'ApproveStudent', label: 'Approve Student'} 
+                      ]
+  Rollno;
+
+  @UI.lineItem: [{ position: 2, label: 'Student name' }]
+  @UI.identification: [{ position: 2, label: 'Student name' }]
+  @UI.selectionField: [{ position: 10 }]
+  Studentname;
+
+  @UI.lineItem: [{ position: 3, label: 'Student Class' }]
+  @UI.identification: [{ position: 3, label: 'Student Class' }]
+  @UI.selectionField: [{ position: 20 }]
+  Studentclass;
+
+  @UI.lineItem: [{ position: 4, label: 'Student Age' }]
+  @UI.identification: [{ position: 4, label: 'Student Age' }]
+  Studentage;
+
+  @UI.lineItem: [{ position: 5, label: 'School name' }]
+  @UI.identification: [{ position: 5, label: 'School name' }]
+  Schoolname;
+
+  @UI.lineItem: [{ position: 60 , label: 'Student Status' }]
+  @UI.identification: [{ position: 60 , label: 'Student Status' }]
+  StudentStatus;
+
+
+
+}

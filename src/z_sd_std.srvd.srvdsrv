@@ -1,0 +1,4 @@
+@EndUserText.label: 'SERVICE DEFINITION FOR STD'
+define service Z_SD_STD {
+  expose Z_C_STD;
+}

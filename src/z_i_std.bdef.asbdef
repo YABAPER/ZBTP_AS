@@ -1,0 +1,41 @@
+managed implementation in class ZBP_I_STDS unique;
+strict ( 2 );
+
+define behavior for Z_I_STD alias _studentdetail
+persistent table zstd_table_demo
+lock master
+authorization master ( instance )
+//etag master <field_name>
+
+{
+//  create ( authorization : global );
+  create;
+  update;
+  delete;
+
+  action ApproveStudent result [1] $self;
+
+  field ( readonly, numbering : managed ) Rollno;
+  field ( readonly ) StudentStatus;
+
+ mapping for zstd_table_demo
+  {
+    Rollno        = rollno;
+    Studentname   = studentname;
+    Studentclass  = studentclass;
+    Studentage    = studentage;
+    Schoolname    = schoolname;
+    StudentStatus = studentstatus;
+  }
+
+ determination SetInitialStatus on modify
+  {
+    create;
+  }
+
+validation ValidateStudentAge on save
+{
+  create;
+  field Studentage;
+}
+}
